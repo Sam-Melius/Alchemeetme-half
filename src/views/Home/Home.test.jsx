@@ -36,7 +36,9 @@ import Home from './Home';
 
     expect(profLikes.children.length).toEqual(likes.length);
 
-    
+    const interests = screen.getByRole('heading', { name: /interests/i });
+
+    expect(interests).toBeInTheDocument();
 
 
   })
