@@ -1,17 +1,20 @@
 import { render ,screen, waitfor} from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 
-describe('App', () => {
-    test('Should render the header', () => {
+
+    test('Should render the header', async () => {
         render(
-            <MemoryRouter>
                 <App />
-            </MemoryRouter>
         );
-        screen.findByAltText('header');
-        
+
+        const image = screen.getByAltText('Alchemy Logo');
+       
+        expect(image).toBeInTheDocument();
+
+        const profName = await screen.findByLabelText(/meet vonta!/i);
+
+        expect(profName).toBeInTheDocument();
     })
-})
+
 

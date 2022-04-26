@@ -1,5 +1,4 @@
-import { render, screen, waitfor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import Home from './Home';
 
 
@@ -20,12 +19,20 @@ import Home from './Home';
         <Home user={user} />
       
     );
-    const { name } = user;
+    const { name, motto } = user;
     
     
     const profName = screen.getByRole('heading', { name });
 
     expect(profName).toBeInTheDocument();
+
+    const profMotto = screen.getByText(motto);
+
+    expect(profMotto).toBeInTheDocument();
+
+    const backColor = screen.getByRole('banner');
+
+    expect(backColor).toHaveStyle(`backgound: var(---grey`);
 
 
   })
