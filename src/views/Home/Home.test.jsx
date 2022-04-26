@@ -40,6 +40,10 @@ import Home from './Home';
 
     expect(interests).toBeInTheDocument();
 
+    const profAvatar = screen.getByAltText('avatar');
+
+    expect(profAvatar).toBeInTheDocument();
+
 
   })
 
