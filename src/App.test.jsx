@@ -15,6 +15,10 @@ import App from './App';
         const profName = await screen.findByLabelText(/meet vonta!/i);
 
         expect(profName).toBeInTheDocument();
+
+        const backColor = screen.getByRole('banner');
+
+        expect(backColor).toHaveStyle(`background: var(---grey`);
     })
 
 

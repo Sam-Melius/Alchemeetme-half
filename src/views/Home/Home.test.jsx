@@ -19,10 +19,12 @@ import Home from './Home';
         <Home user={user} />
       
     );
-    const { name, motto } = user;
+    const { name, motto, likes } = user;
     
     
     const profName = screen.getByRole('heading', { name });
+
+    console.log({ name });
 
     expect(profName).toBeInTheDocument();
 
@@ -30,9 +32,11 @@ import Home from './Home';
 
     expect(profMotto).toBeInTheDocument();
 
-    const backColor = screen.getByRole('banner');
+    const profLikes = screen.getByRole('list');
 
-    expect(backColor).toHaveStyle(`backgound: var(---grey`);
+    expect(profLikes.children.length).toEqual(likes.length);
+
+    
 
 
   })
