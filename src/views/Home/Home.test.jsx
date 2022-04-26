@@ -44,6 +44,10 @@ import Home from './Home';
 
     expect(profAvatar).toBeInTheDocument();
 
+    const profHeader = screen.getByAltText('header');
+
+    expect(profHeader).toBeInTheDocument();
+
 
   })
 
